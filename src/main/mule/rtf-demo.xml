@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c746b23c-5fb5-40c9-a813-d6649ef897d4" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="rtf-demoFlow" doc:id="1ecbd660-7718-4be4-9860-00ef9ecf3ba8" >
+		<http:listener doc:name="Listener" doc:id="34968666-f7a6-4996-9e6e-1b4f7a651d7e" config-ref="HTTP_Listener_config" path="/rtf"/>
+		<set-payload value='#["Successfully implemented Runtime Fabric"]' doc:name="Set Payload" doc:id="0b7c3f09-4cff-44a1-9e2a-be16120970a6" />
+	</flow>
+</mule>
