@@ -9,6 +9,8 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	</http:listener-config>
 	<flow name="rtf-demoFlow" doc:id="1ecbd660-7718-4be4-9860-00ef9ecf3ba8" >
 		<http:listener doc:name="Listener" doc:id="34968666-f7a6-4996-9e6e-1b4f7a651d7e" config-ref="HTTP_Listener_config" path="/rtf"/>
+		<logger level="INFO" doc:name="Logger" doc:id="38c11867-8b4b-4167-94d9-96bdc88b3b57" message="RTF login"/>
 		<set-payload value='#["Successfully implemented Runtime Fabric"]' doc:name="Set Payload" doc:id="0b7c3f09-4cff-44a1-9e2a-be16120970a6" />
+		<logger level="INFO" doc:name="Logger" doc:id="37abeabc-73ca-454c-97e7-d7c5425814cd" message="RTF logout"/>
 	</flow>
 </mule>
